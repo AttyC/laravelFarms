@@ -4,13 +4,12 @@ namespace market;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Market extends Model
+class Farm extends Model
 {
     protected $fillable = ['name', 'city', 'website'];
 
-         public function farms()
+    public function markets()
      {
-         return $this->belongsToMany('\market\Farm')->withTimestamps();
+         return $this->belongsToMany('\market\Market')->withTimestamps();
      }
 }
-
