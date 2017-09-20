@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+}
+
+.flex {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.list-group-item {
+    list-style-type: none;
+
+    border: 1px #ccc solid;
+    border-radius: 10px;
+}
+
+h2 {
+      color: purple;
+}
+a {
+  display: block;
+  text-transform: lowercase;
+
+ }
+ a:hover{
+    text-decoration: none;
+
+}
+ a:hover h2 {
+    color: red;
+}

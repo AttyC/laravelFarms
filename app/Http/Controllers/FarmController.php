@@ -67,9 +67,10 @@ class FarmController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Farm $farm)
     {
-        //
+        $markets = market\Market::get()->pluck('name', 'id')->sortBy('name');
+        return view('farms.edit', compact('farm', 'market'));
     }
 
     /**
@@ -81,7 +82,9 @@ class FarmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $farm->update($request->all() );
+        $farm->markets->sync($request->markets);
+        return redirect('farms');
     }
 
     /**

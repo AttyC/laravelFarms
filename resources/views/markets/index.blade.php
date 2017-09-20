@@ -1,16 +1,18 @@
 @extends('layouts.app')
 @section('main')
 
-<ul>
+<ul class="list-group flex">
   @foreach($markets as $market)
-  <li>
-    <a href="{{ route('markets.show', $market) }}">
-        {{ $market->name }}
-        <?php
-        echo 'current pphp version ' . phpversion();
-        ?>
 
+   <li class="list-group-item">
+    
+    <a href="{{ route('markets.show', $market) }}">
+
+      {{ $market}}
+      <h2>{{ $market->name }}</h2>
+    <img src="img/farm.jpg" class="img">
     </a>
+    
 
   </li>
   @endforeach
